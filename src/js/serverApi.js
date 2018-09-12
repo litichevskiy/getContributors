@@ -15,15 +15,12 @@ module.exports = {
     if( !url ) throw new Error('parameter url can not be empty');
     let response;
     try{
-
       response = await fetch( url );
       if( response.ok ) response = await response.json();
       else throw new Error();
-
     } catch( error ) {
       return Promise.reject( error )
     }
-
     return response;
   }
 };
